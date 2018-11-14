@@ -23,11 +23,10 @@ namespace Tests
         [Test]
         public void PrintNumsInRange()
         {
-            int startRange = 1;
-            int endRange = 5;
+            int[] numRange = new int[] {1, 2, 3, 4, 5 };
 
             var expected = "12345";
-            var actualResult = _findOddEven.IsOddOrEven(startRange, endRange);
+            var actualResult = _findOddEven.IsOddOrEven(numRange);
 
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
@@ -36,15 +35,28 @@ namespace Tests
         [Test]
         public void PrintWordEvenForEvenNums()
         {
-            int startRange = 1;
-            int endRange = 10;
+            int[] numRange = new int[] { 2, 4, 6, 8, 10};
 
-            var expected = " 1 even 3 even 5 even 7 even 9 even";
+            var expected = " even even even even even";
 
-            var actualResult = _findOddEven.IsOddOrEven(startRange, endRange);
+            var actualResult = _findOddEven.IsOddOrEven(numRange);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
+
+        [Test]
+        public void PrintWordEvenAndOddForGivenInput()
+        {
+            int[] numRange = new int[] { 2, 9, 4, 15};
+
+            var expected = " even odd even odd";
+
+            var actualResult = _findOddEven.IsOddOrEven(numRange);
+            Console.WriteLine(actualResult);
+            Assert.AreEqual(expected, actualResult);
+        }
+
+
     }
 
 
