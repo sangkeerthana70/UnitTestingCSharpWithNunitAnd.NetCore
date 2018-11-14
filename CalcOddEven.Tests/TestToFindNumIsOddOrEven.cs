@@ -56,7 +56,17 @@ namespace Tests
             Assert.AreEqual(expected, actualResult);
         }
 
+        [Test]
+        public void PrintWordEvenAndOddAndPrimeNumbersForAInput()
+        {
+            int[] numRange = new int[] { 1, 2, 3, 4, 9, 11, 13 };
 
+            var expected = " 1 even 3 even odd 11 13";
+
+            var actualResult = _findOddEven.IsOddOrEven(numRange);
+            Console.WriteLine(actualResult);
+            Assert.AreEqual(expected, actualResult);
+        }
     }
 
 
